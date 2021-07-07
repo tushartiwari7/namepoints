@@ -2,16 +2,14 @@
 "use strict";
 
 const alphabets = require('./utils/alphabets');
-const getNamePoints = (text) => {
+const getNamePoints = (text,callback) => {
     
 
         return new Promise((resolve,reject)=> {
 
             if(text.length>6)  {
                 reject("The Length of the text is more than 6, Please enter 6 or less words.");
-                console.error("The Length of the text is more than 6, Please enter 6 or less words.");
-                
-                // return callback("The Length of the text is more than 6, Please enter 6 or less words.");
+                return callback("The Length of the text is more than 6, Please enter 6 or less words.");
             }
             else {
                 const chars = text.split('');
@@ -85,14 +83,12 @@ const getNamePoints = (text) => {
                     })
 
                     resolve(nameArray);
-                    return nameArray;
+                    return callback(null,nameArray);
 
             };
 
         });
 
-
-// return nameArray;
 }
 
 module.exports = getNamePoints;
