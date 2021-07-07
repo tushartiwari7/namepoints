@@ -1,6 +1,6 @@
 {
   "name": "namepoints",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "pass in a name and get an array of coordinates representing your name on a graph.",
   "main": "index.js",
   "bin": "index.js",
